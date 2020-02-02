@@ -39,5 +39,14 @@
 	
 	
 	<div th:replace="common/header :: body-bottom-scripts"></div>
+	<script>
+		$(document).ready(function() {
+			$("#bookListTable").DataTable({
+				"lengthMenu": [5,10,15,20,50,100],
+				"ordering": false,
+				stateSave: true
+			});
+		});
+	</script>
 </body>
 </html>
