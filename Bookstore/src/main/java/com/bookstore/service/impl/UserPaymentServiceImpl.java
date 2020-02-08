@@ -14,11 +14,10 @@ public class UserPaymentServiceImpl implements UserPaymentService{
 	private UserPaymentRepository userPaymentRepository;
 		
 	public UserPayment findById(Long id) {
-		return userPaymentRepository.findById(id).orElse(null);
+		return userPaymentRepository.findOne(id);
 	}
-
+	
 	public void removeById(Long id) {
-		// TODO Auto-generated method stub
-		userPaymentRepository.deleteById(id);
+		userPaymentRepository.delete(id);
 	}
 } 

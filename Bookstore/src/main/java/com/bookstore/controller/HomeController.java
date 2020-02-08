@@ -230,8 +230,6 @@ public class HomeController {
 		return "myProfile";
 	}
 	
-	
-	
 	@RequestMapping("/addNewShippingAddress")
 	public String addNewShippingAddress(
 			Model model, Principal principal
@@ -289,10 +287,11 @@ public class HomeController {
 		model.addAttribute("userShippingList", user.getUserShippingList());
 		model.addAttribute("listOfShippingAddresses", true);
 		model.addAttribute("classActiveShipping", true);
-		model.addAttribute("listOfCreditCard", true);
+		model.addAttribute("listOfCreditCards", true);
 		
 		return "myProfile";
 	}
+	
 	
 	@RequestMapping("/updateCreditCard")
 	public String updateCreditCard(
@@ -335,6 +334,7 @@ public class HomeController {
 			return "badRequestPage";
 		} else {
 			model.addAttribute("user", user);
+			
 			model.addAttribute("userShipping", userShipping);
 			
 			List<String> stateList = USConstants.listOfUSStatesCode;

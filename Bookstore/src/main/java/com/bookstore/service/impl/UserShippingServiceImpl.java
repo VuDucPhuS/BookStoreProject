@@ -13,11 +13,13 @@ public class UserShippingServiceImpl implements UserShippingService{
 	@Autowired
 	private UserShippingRepository userShippingRepository;
 	
+	
 	public UserShipping findById(Long id) {
-		return userShippingRepository.findById(id).orElse(null);
+		return userShippingRepository.findOne(id);
 	}
 	
 	public void removeById(Long id) {
-		userShippingRepository.deleteById(id);
+		userShippingRepository.delete(id);
 	}
+
 }
