@@ -7,7 +7,7 @@ import com.bookstore.domain.UserShipping;
 import com.bookstore.service.ShippingAddressService;
 
 @Service
-public class ShippingAddressServiceImpl implements ShippingAddressService{
+public class ShippingAddressServiceImpl implements ShippingAddressService {
 	public ShippingAddress setByUserShipping(UserShipping userShipping, ShippingAddress shippingAddress) {
 		shippingAddress.setShippingAddressName(userShipping.getUserShippingName());
 		shippingAddress.setShippingAddressStreet1(userShipping.getUserShippingStreet1());
@@ -19,5 +19,4 @@ public class ShippingAddressServiceImpl implements ShippingAddressService{
 		
 		return shippingAddress;
 	}
-		
 }

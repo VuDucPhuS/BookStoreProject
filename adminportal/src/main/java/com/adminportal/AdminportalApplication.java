@@ -14,6 +14,8 @@ import com.adminportal.domain.security.UserRole;
 import com.adminportal.service.UserService;
 import com.adminportal.utility.SecurityUtility;
 
+
+
 @SpringBootApplication
 public class AdminportalApplication implements CommandLineRunner{
 	
@@ -38,5 +40,4 @@ public class AdminportalApplication implements CommandLineRunner{
 		
 		userService.createUser(user1, userRoles);
 	}
-
 }

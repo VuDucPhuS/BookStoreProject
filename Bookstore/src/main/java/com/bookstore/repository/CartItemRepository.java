@@ -2,9 +2,8 @@ package com.bookstore.repository;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bookstore.domain.CartItem;
 import com.bookstore.domain.ShoppingCart;

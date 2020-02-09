@@ -66,6 +66,11 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
+	public User findById(Long id) {
+		return userRepository.findOne(id);
+	}
+	
+	@Override
 	@Transactional
 	public User createUser(User user, Set<UserRole> userRoles){
 		User localUser = userRepository.findByUsername(user.getUsername());
@@ -83,8 +88,8 @@ public class UserServiceImpl implements UserService{
 			shoppingCart.setUser(user);
 			user.setShoppingCart(shoppingCart);
 			
-			user.setUserPaymentList(new ArrayList<UserPayment>());
 			user.setUserShippingList(new ArrayList<UserShipping>());
+			user.setUserPaymentList(new ArrayList<UserPayment>());
 			
 			localUser = userRepository.save(user);
 		}

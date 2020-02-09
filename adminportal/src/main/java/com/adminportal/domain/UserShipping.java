@@ -19,7 +19,6 @@ public class UserShipping {
 	private String userShippingState;
 	private String userShippingCountry;
 	private String userShippingZipcode;
-	
 	private boolean userShippingDefault;
 	
 	
@@ -126,8 +125,6 @@ public class UserShipping {
 	public void setUserShippingDefault(boolean userShippingDefault) {
 		this.userShippingDefault = userShippingDefault;
 	}
-	
-	
 	
 	
 }

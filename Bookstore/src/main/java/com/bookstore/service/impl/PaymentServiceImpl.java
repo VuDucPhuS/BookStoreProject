@@ -8,6 +8,7 @@ import com.bookstore.service.PaymentService;
 
 @Service
 public class PaymentServiceImpl implements PaymentService{
+	
 	public Payment setByUserPayment(UserPayment userPayment, Payment payment) {
 		payment.setType(userPayment.getType());
 		payment.setHolderName(userPayment.getHolderName());
@@ -18,4 +19,5 @@ public class PaymentServiceImpl implements PaymentService{
 		
 		return payment;
 	}
+
 }

@@ -96,6 +96,4 @@ public class BillingAddress {
 		this.order = order;
 	}
 
-	
-	
 }

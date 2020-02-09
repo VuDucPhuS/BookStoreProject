@@ -83,6 +83,7 @@ public class BookController {
 				String name = book.getId() + ".png";
 				
 				Files.delete(Paths.get("src/main/resources/static/image/book/"+name));
+				
 				BufferedOutputStream stream = new BufferedOutputStream(
 						new FileOutputStream(new File("src/main/resources/static/image/book/" + name)));
 				stream.write(bytes);

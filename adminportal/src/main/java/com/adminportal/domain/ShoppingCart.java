@@ -26,7 +26,7 @@ public class ShoppingCart {
 	@JsonIgnore
 	private List<CartItem> cartItemList;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private User user;
 
 	public Long getId() {

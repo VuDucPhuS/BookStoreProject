@@ -30,10 +30,10 @@ public class ShoppingCartController {
 	private CartItemService cartItemService;
 	
 	@Autowired
-	private ShoppingCartService shoppingCartService;
+	private BookService bookService;
 	
 	@Autowired
-	private BookService bookService;
+	private ShoppingCartService shoppingCartService;
 	
 	@RequestMapping("/cart")
 	public String shoppingCart(Model model, Principal principal) {
@@ -49,7 +49,7 @@ public class ShoppingCartController {
 		
 		return "shoppingCart";
 	}
-	
+
 	@RequestMapping("/addItem")
 	public String addItem(
 			@ModelAttribute("book") Book book,
@@ -59,7 +59,7 @@ public class ShoppingCartController {
 		User user = userService.findByUsername(principal.getName());
 		book = bookService.findOne(book.getId());
 		
-		if(Integer.parseInt(qty) > book.getInStockNumber()) {
+		if (Integer.parseInt(qty) > book.getInStockNumber()) {
 			model.addAttribute("notEnoughStock", true);
 			return "forward:/bookDetail?id="+book.getId();
 		}
@@ -88,5 +88,4 @@ public class ShoppingCartController {
 		
 		return "forward:/shoppingCart/cart";
 	}
-
 }

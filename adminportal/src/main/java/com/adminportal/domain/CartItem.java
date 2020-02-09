@@ -12,9 +12,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class CartItem {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -25,6 +27,7 @@ public class CartItem {
 	private Book book;
 	
 	@OneToMany(mappedBy = "cartItem")
+	@JsonIgnore
 	private List<BookToCartItem> bookToCartItemList;
 	
 	@ManyToOne
@@ -90,7 +93,6 @@ public class CartItem {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-	
 	
 	
 }
